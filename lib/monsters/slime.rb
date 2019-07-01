@@ -1,10 +1,12 @@
 class Slime < Monster
-    attr_reader :name
+    attr_accessor :hp,:status
+    attr_reader :name 
     def initialize name
+        @hp = 30
         super name
     end
 
-    def tackle(target)
+    def attack(target)
         val = ["tackle",true,0]
         if rand(1..100) > 20 
             val[2] = rand(10..20)
@@ -13,6 +15,15 @@ class Slime < Monster
         end
         target.hp -= val[2]
         val
+    end
+    def secret
+        file='./lib/art/slime.txt'
+        f = File.open(file, "r")
+        f.each_line { |line|
+            sleep 0.05
+            puts line
+        }
+        f.close
     end
 
 
