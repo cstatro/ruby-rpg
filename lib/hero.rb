@@ -18,4 +18,7 @@ class Hero
             puts "...but misses! Health is currently #{self.hp}!"
         end   
     end
+    def number_of_victories
+        Battle.all.select {|battle| battle.victor == self}.length
+    end
 end

@@ -1,5 +1,5 @@
 class Battle
-    attr_reader :hero,:monster,:victor
+    attr_reader :hero,:monster,:victor, :status
     @@all = []
     def initialize hero, monster
         @hero, @monster = hero, monster
@@ -12,6 +12,9 @@ class Battle
             fighter.first.take_turn(fighter.first.attack(fighter.last),fighter.last)
             fighter.reverse!
         end
+        fighter.first.status = "dead"
+        @victor = fighter.last
+        @status = "finished"
 
     end
     def self.all
