@@ -23,4 +23,8 @@ class Hero
     def number_of_victories
         Battle.all.select {|battle| battle.victor == self}.length
     end
+    private
+    def inc_level
+        @level += 1
+    end
 end

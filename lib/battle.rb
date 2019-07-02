@@ -41,7 +41,7 @@ class Battle
             level_points = (hero.level_up) - hero.current_xp
             hero.current_xp = monster.xp-level_points
             hero.level_up = hero.level_up*1.5
-            hero.level += 1
+            self.hero.send(:inc_level)
         else
             hero.current_xp += monster.xp
         end
