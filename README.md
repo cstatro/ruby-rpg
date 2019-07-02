@@ -34,3 +34,17 @@ class Warrior < Hero
             @attack = 8
     end
 ```
+
+#### Monster Model
+The `Monster` model initialization is relatively similiar to to `Hero` initialization, but it has less instance variables because there's no leveling system for monsters since they are not playable.
+
+```
+class Warrior < Hero
+    attr_accessor :hp,:status,:auto_action,:current_xp,:level_up
+    attr_reader :name,:level
+    def initialize name
+        super name
+            @hp = 100
+            @attack = 8
+    end
+ ```
