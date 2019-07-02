@@ -1,4 +1,5 @@
 class Monster
+    attr_reader :xp
     def initialize name
         @name = name
         @status = "alive"

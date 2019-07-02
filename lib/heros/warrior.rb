@@ -1,5 +1,5 @@
 class Warrior < Hero
-    attr_accessor :hp,:status,:auto_action
+    attr_accessor :hp,:status,:auto_action,:current_xp,:level_up
     attr_reader :name,:level
     def initialize name
         super name

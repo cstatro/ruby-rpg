@@ -14,10 +14,36 @@ class Battle
         end
         fighter.first.status = "dead"
         @victor = fighter.last
+        finish_battle
         @status = "finished"
-
     end
+    def process_gains
+        if (monster.xp+ hero.current_xp) >= hero.level_up
+            level_points = (hero.level_up) - hero.current_xp
+            hero.current_xp = monster.xp-level_points
+            hero.level_up = hero.level_up*1.5
+            hero.level += 1
+        else
+            hero.current_xp += monster.xp
+        end
+    end
+
     def self.all
         @@all
+    end
+    private
+    def finish_battle
+        standard_load
+        process_gains unless self.victor.class.superclass == Monster
+    end
+    def process_gains
+        if (monster.xp+ hero.current_xp) >= hero.level_up
+            level_points = (hero.level_up) - hero.current_xp
+            hero.current_xp = monster.xp-level_points
+            hero.level_up = hero.level_up*1.5
+            hero.level += 1
+        else
+            hero.current_xp += monster.xp
+        end
     end
 end

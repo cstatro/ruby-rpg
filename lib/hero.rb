@@ -1,10 +1,12 @@
 class Hero
-    def initialize name
+    def initialize name 
         @level = 1
         @status = 'good'
         @hp = 50  
         @name = name
-        @attack = 5 
+        @attack = 5 #this doesn't do anything
+        @current_xp = 0
+        @level_up = 300
     end
     def take_turn attack,target
         standard_load

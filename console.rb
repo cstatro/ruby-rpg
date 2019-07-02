@@ -16,10 +16,11 @@ battle2 = Battle.new(hero1,slime2)
 battle3 = Battle.new(hero1,slime3)
 battle4 = Battle.new(hero2,slime4)
 
-# battle1.auto_battle
+battle1.auto_battle
 # battle2.auto_battle
 # battle3.auto_battle
 # battle4.auto_battle
+
 
 
 

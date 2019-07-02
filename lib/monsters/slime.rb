@@ -3,6 +3,7 @@ class Slime < Monster
     attr_reader :name 
     def initialize name
         @hp = 30
+        @xp = 150
         super name
     end
 
