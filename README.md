@@ -10,7 +10,7 @@ I'm building a CLI app that can be used to simulate RPG battles. The schema look
 #### Hero Model
 The `Hero` model is initialized with set of stats that can be overwritten in any potential subclass model. 
 
-```
+```ruby
 class Hero
     def initialize name 
         @level = 1
@@ -24,7 +24,7 @@ class Hero
 ```
 In the example below we are inheriting from Hero into a new class named `Warrior`
 
-```
+```ruby
 class Warrior < Hero
     attr_accessor :hp,:status,:auto_action,:current_xp,:level_up
     attr_reader :name,:level
@@ -38,7 +38,7 @@ class Warrior < Hero
 #### Monster Model
 The `Monster` model initialization is relatively similiar to to `Hero` initialization, but it has less instance variables because there's no leveling system for monsters since they are not playable.
 
-```
+```ruby
 class Warrior < Hero
     attr_accessor :hp,:status,:auto_action,:current_xp,:level_up
     attr_reader :name,:level
